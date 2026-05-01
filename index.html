@@ -1,174 +1,86 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="食辰 — 做饭导航与陪伴型应用，帮助厨房新手把一顿饭真正做出来。">
-  <title>食辰 — 省心做饭的厨房小帮手</title>
-  <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
-      line-height: 1.8;
-      color: #333;
-      background: #FFFBF5;
-      padding: 0;
-    }
-    .container {
-      max-width: 560px;
-      margin: 0 auto;
-      padding: 48px 24px;
-    }
-    h1 {
-      font-size: 32px;
-      font-weight: 700;
-      color: #1a1a1a;
-      margin-bottom: 4px;
-      text-align: center;
-    }
-    .tagline {
-      font-size: 16px;
-      color: #888;
-      text-align: center;
-      margin-bottom: 36px;
-    }
-
-    /* About section */
-    .about {
-      background: #fff;
-      border: 1px solid #eee;
-      border-radius: 16px;
-      padding: 28px 24px;
-      margin-bottom: 20px;
-    }
-    .about h2 {
-      font-size: 17px;
-      font-weight: 600;
-      color: #1a1a1a;
-      margin-bottom: 12px;
-    }
-    .about p {
-      font-size: 15px;
-      color: #555;
-      line-height: 1.8;
-      margin-bottom: 10px;
-    }
-    .about p:last-child { margin-bottom: 0; }
-
-    .highlights {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin-top: 16px;
-    }
-    .highlights span {
-      font-size: 13px;
-      padding: 4px 12px;
-      background: #FFF7ED;
-      color: #C2410C;
-      border-radius: 20px;
-    }
-
-    /* Links section */
-    .links {
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-      margin-bottom: 20px;
-    }
-    .links a {
-      display: block;
-      padding: 14px 20px;
-      background: #fff;
-      border: 1px solid #eee;
-      border-radius: 14px;
-      text-decoration: none;
-      color: #1a1a1a;
-      font-size: 15px;
-      font-weight: 500;
-      transition: all 0.2s;
-    }
-    .links a:hover {
-      border-color: #FF8C42;
-      color: #FF8C42;
-    }
-    .links a .arrow {
-      float: right;
-      color: #ccc;
-    }
-    .links a:hover .arrow { color: #FF8C42; }
-
-    /* Support section */
-    .support {
-      background: #fff;
-      border: 1px solid #eee;
-      border-radius: 16px;
-      padding: 24px;
-      text-align: center;
-      margin-bottom: 20px;
-    }
-    .support h2 {
-      font-size: 17px;
-      font-weight: 600;
-      color: #1a1a1a;
-      margin-bottom: 8px;
-    }
-    .support p {
-      font-size: 14px;
-      color: #888;
-      margin-bottom: 12px;
-    }
-    .support a {
-      font-size: 16px;
-      color: #C2410C;
-      font-weight: 500;
-      text-decoration: none;
-    }
-    .support a:hover { text-decoration: underline; }
-
-    /* Footer */
-    footer {
-      text-align: center;
-      font-size: 13px;
-      color: #aaa;
-      margin-top: 32px;
-      padding-top: 24px;
-      border-top: 1px solid #eee;
-    }
-  </style>
-</head>
-<body>
-  <div class="container">
-    <h1>食辰</h1>
-    <p class="tagline">省心做饭的厨房小帮手</p>
-
-    <div class="about">
-      <h2>关于食辰</h2>
-      <p>食辰不是一份静态菜谱，而是你的<strong>做饭导航</strong>。像开车导航一样，一步一步带你从备料到出锅，把一顿饭真正做出来。</p>
-      <p>说一声「蛋蛋」就能推进下一步，双手忙着也能轻松做饭。支持多菜连续做，还支持把 B 站、小红书视频转成你的私有菜谱。</p>
-      <div class="highlights">
-        <span>做饭导航</span>
-        <span>语音推进</span>
-        <span>多菜连续做</span>
-        <span>私有菜谱</span>
-        <span>新手友好</span>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="做饭，其实没那么难。食辰是一步一步带你把饭做出来的做饭导航，从选菜到出锅，全程陪伴。"
+    />
+    <title>食辰 — 做饭，其实没那么难</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <!-- Hero -->
+    <section class="hero">
+      <div class="container">
+        <div class="hero-egg">🍳</div>
+        <h1 class="fade-in-up-delay-1">做饭，其实没那么难</h1>
+        <p class="hero-sub fade-in-up-delay-2">食辰 — 一步一步带你把饭做出来的做饭导航</p>
+        <div class="fade-in-up-delay-3">
+          <a href="https://apps.apple.com/cn/app/%E9%A3%9F%E8%BE%B0/id6760736540" class="btn-cta" target="_blank" rel="noopener noreferrer">App Store 下载</a>
+        </div>
+        <div class="scroll-hint fade-in-up-delay-3" aria-hidden="true">↓</div>
       </div>
-    </div>
+    </section>
 
-    <div class="links">
-      <a href="privacy-policy/">隐私政策 <span class="arrow">→</span></a>
-      <a href="user-agreement/">用户协议（EULA）<span class="arrow">→</span></a>
-    </div>
+    <!-- 痛点共鸣 -->
+    <section class="section-pain">
+      <div class="container">
+        <h2 class="pain-title">看了 100 个菜谱视频，<br>还是不敢动手？</h2>
+        <ul class="pain-list">
+          <li>📱 刷了无数做饭视频，收藏夹吃灰</li>
+          <li>🤯 一到厨房就手忙脚乱，不知道先做什么</li>
+          <li>📝 菜谱看着简单，做起来完全不是那回事</li>
+        </ul>
+      </div>
+    </section>
 
-    <div class="support">
-      <h2>技术支持</h2>
-      <p>如有使用问题或建议反馈，请通过以下方式联系我们：</p>
-      <a href="mailto:w843085105@163.com">w843085105@163.com</a>
-    </div>
+    <!-- 核心卖点 -->
+    <section class="section-value">
+      <div class="container">
+        <div class="value-grid">
+          <div class="value-card">
+            <div class="value-emoji">🧭</div>
+            <h3>做饭导航</h3>
+            <p>不只给你菜谱，而是一步步带你做完</p>
+          </div>
+          <div class="value-card">
+            <div class="value-emoji">🍽️</div>
+            <h3>整顿饭规划</h3>
+            <p>多道菜一起准备，像真正的家庭做饭</p>
+          </div>
+          <div class="value-card">
+            <div class="value-emoji">🗣️</div>
+            <h3>语音助手「蛋蛋」</h3>
+            <p>喊一声就翻下一步，双手不离锅</p>
+          </div>
+        </div>
+      </div>
+    </section>
 
-    <footer>
-      <p>© 2026 食辰. 保留所有权利.</p>
+    <!-- CTA -->
+    <section class="section-cta">
+      <div class="container">
+        <h2>开始你的第一顿饭</h2>
+        <a href="https://apps.apple.com/cn/app/%E9%A3%9F%E8%BE%B0/id6760736540" class="btn-cta btn-cta-lg" target="_blank" rel="noopener noreferrer">App Store 下载</a>
+        <p class="cta-note">iOS 版已上架，更多平台即将到来</p>
+      </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-links">
+          <a href="/privacy-policy/">隐私政策</a>
+          <span class="separator">|</span>
+          <a href="/user-agreement/">用户协议</a>
+        </div>
+        <div class="footer-copyright">
+          <p>联系邮箱：w843085105@163.com</p>
+          <p>&copy; 2025 食辰</p>
+        </div>
+      </div>
     </footer>
-  </div>
-</body>
+  </body>
 </html>

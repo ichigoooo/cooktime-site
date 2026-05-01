@@ -1,0 +1,13 @@
+{
+  "applinks": {
+    "apps": [],
+    "details": [
+      {
+        "appID": "595548UJZF.com.iamagamer.shichen",
+        "paths": [
+          "/wechat-login/*"
+        ]
+      }
+    ]
+  }
+}

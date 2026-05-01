@@ -1,0 +1,600 @@
+/* ============================================
+   食辰 (Shichen) — 共享设计系统样式表
+   被 index.html、隐私政策页、用户协议页共同引用
+   ============================================ */
+
+/* ------------------------------------------
+   1. CSS 变量 (Design Tokens)
+   ------------------------------------------ */
+:root {
+  --bg: #FFFBF5;
+  --surface: #FFFFFF;
+  --primary: #FF9B71;
+  --primary-hover: #E8865E;
+  --primary-light: #FFF7F3;
+  --text-primary: #3D2C2C;
+  --text-secondary: #8B7E74;
+  --border: #F0E6DC;
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --radius-pill: 100px;
+  --shadow: 0 2px 12px rgba(61, 44, 44, 0.06);
+  --shadow-hover: 0 8px 32px rgba(61, 44, 44, 0.10);
+  --font-family: -apple-system, BlinkMacSystemFont, "PingFang SC",
+    "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+  --max-width: 800px;
+}
+
+/* ------------------------------------------
+   2. CSS Reset & 基础排版
+   ------------------------------------------ */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--text-primary);
+  font-family: var(--font-family);
+  font-size: 16px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  color: var(--primary);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  color: var(--primary-hover);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+.text-secondary {
+  color: var(--text-secondary);
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+/* ------------------------------------------
+   3. 布局容器
+   ------------------------------------------ */
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* ------------------------------------------
+   4. Hero — 首屏
+   ------------------------------------------ */
+.hero {
+  min-height: 100vh;
+  min-height: 100dvh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 60px 0 40px;
+  position: relative;
+  background: linear-gradient(180deg, var(--primary-light) 0%, var(--bg) 100%);
+}
+
+.hero-egg {
+  display: inline-block;
+  font-size: 80px;
+  margin-bottom: 32px;
+  animation: bounce 2.4s ease infinite;
+}
+
+.hero h1 {
+  font-size: 36px;
+  font-weight: 800;
+  line-height: 1.25;
+  margin-bottom: 20px;
+  letter-spacing: -0.5px;
+}
+
+.hero-sub {
+  color: var(--text-secondary);
+  font-size: 18px;
+  line-height: 1.6;
+  margin-bottom: 48px;
+  max-width: 420px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.scroll-hint {
+  position: absolute;
+  bottom: 32px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 20px;
+  color: var(--text-secondary);
+  opacity: 0.4;
+  animation: scrollPulse 2s ease infinite;
+}
+
+/* ------------------------------------------
+   5. CTA 按钮
+   ------------------------------------------ */
+.btn-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 52px;
+  padding: 0 36px;
+  background: var(--primary);
+  color: #fff;
+  font-size: 16px;
+  font-weight: 600;
+  border: none;
+  border-radius: var(--radius-pill);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.btn-cta:hover {
+  background: var(--primary-hover);
+  color: #fff;
+  box-shadow: var(--shadow-hover);
+  transform: translateY(-2px);
+}
+
+.btn-cta-lg {
+  height: 60px;
+  padding: 0 48px;
+  font-size: 18px;
+}
+
+/* btn-text for legal pages */
+.btn-text {
+  display: inline-flex;
+  align-items: center;
+  background: none;
+  border: none;
+  color: var(--primary);
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+  padding: 8px 4px;
+  transition: color 0.2s ease;
+  text-decoration: none;
+}
+
+.btn-text:hover {
+  color: var(--primary-hover);
+}
+
+/* keep legacy class for any shared usage */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 48px;
+  padding: 14px 32px;
+  background: var(--primary);
+  color: #fff;
+  font-size: 16px;
+  font-weight: 600;
+  border: none;
+  border-radius: var(--radius-pill);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.btn-primary:hover {
+  background: var(--primary-hover);
+  color: #fff;
+  box-shadow: var(--shadow-hover);
+  transform: translateY(-1px);
+}
+
+/* ------------------------------------------
+   6. 痛点共鸣
+   ------------------------------------------ */
+.section-pain {
+  padding: 100px 0;
+  text-align: center;
+}
+
+.pain-title {
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 1.4;
+  margin-bottom: 48px;
+}
+
+.pain-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 480px;
+  margin: 0 auto;
+}
+
+.pain-list li {
+  font-size: 17px;
+  line-height: 1.6;
+  color: var(--text-secondary);
+  text-align: left;
+}
+
+/* ------------------------------------------
+   7. 核心卖点
+   ------------------------------------------ */
+.section-value {
+  padding: 100px 0;
+}
+
+.value-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 32px;
+}
+
+.value-card {
+  background: var(--surface);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow);
+  padding: 40px 32px;
+  text-align: center;
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.value-card:hover {
+  box-shadow: var(--shadow-hover);
+  transform: translateY(-4px);
+}
+
+.value-emoji {
+  font-size: 48px;
+  margin-bottom: 20px;
+}
+
+.value-card h3 {
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+.value-card p {
+  color: var(--text-secondary);
+  font-size: 16px;
+  line-height: 1.6;
+  margin-bottom: 0;
+}
+
+/* ------------------------------------------
+   8. 下载 CTA
+   ------------------------------------------ */
+.section-cta {
+  padding: 120px 0;
+  text-align: center;
+  background: linear-gradient(180deg, var(--bg) 0%, var(--primary-light) 50%, var(--bg) 100%);
+}
+
+.section-cta h2 {
+  font-size: 32px;
+  font-weight: 800;
+  margin-bottom: 40px;
+}
+
+.cta-note {
+  color: var(--text-secondary);
+  font-size: 14px;
+  margin-top: 20px;
+  margin-bottom: 0;
+}
+
+/* ------------------------------------------
+   9. 页脚
+   ------------------------------------------ */
+.footer {
+  background: var(--text-primary);
+  color: rgba(255, 255, 255, 0.7);
+  padding: 40px 0;
+  font-size: 14px;
+}
+
+.footer .container {
+  text-align: center;
+}
+
+.footer-links {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+}
+
+.footer-links a {
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 14px;
+  transition: color 0.2s ease;
+}
+
+.footer-links a:hover {
+  color: #fff;
+}
+
+.footer-links .separator {
+  color: rgba(255, 255, 255, 0.3);
+}
+
+.footer-copyright {
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.footer-copyright p {
+  margin-bottom: 4px;
+}
+
+.footer-copyright a {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.footer-copyright a:hover {
+  color: #fff;
+}
+
+/* ------------------------------------------
+   10. 协议页面专用样式
+   ------------------------------------------ */
+.legal-page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.legal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 0;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 40px;
+}
+
+.legal-header .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.nav-logo {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--primary);
+  text-decoration: none;
+  letter-spacing: 0.5px;
+}
+
+.nav-logo:hover {
+  color: var(--primary);
+}
+
+.legal-header .nav-logo {
+  font-size: 20px;
+}
+
+.legal-back {
+  color: var(--text-secondary);
+  font-size: 14px;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  transition: color 0.2s ease;
+}
+
+.legal-back:hover {
+  color: var(--primary);
+}
+
+.legal-content {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 0 24px 80px;
+  flex: 1;
+}
+
+.legal-content h1 {
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 1.3;
+  margin-bottom: 8px;
+}
+
+.legal-content .legal-date {
+  color: var(--text-secondary);
+  font-size: 14px;
+  margin-bottom: 32px;
+}
+
+.legal-content h2 {
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1.35;
+  margin-top: 32px;
+  margin-bottom: 12px;
+}
+
+.legal-content h3 {
+  font-size: 17px;
+  font-weight: 600;
+  margin-top: 24px;
+  margin-bottom: 8px;
+}
+
+.legal-content p {
+  margin-bottom: 1em;
+  color: var(--text-primary);
+  line-height: 1.8;
+}
+
+.legal-content ul,
+.legal-content ol {
+  margin-bottom: 1em;
+  padding-left: 2em;
+}
+
+.legal-content li {
+  margin-bottom: 0.5em;
+  line-height: 1.7;
+}
+
+.legal-content strong {
+  font-weight: 600;
+}
+
+/* ------------------------------------------
+   11. 动画
+   ------------------------------------------ */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-16px); }
+}
+
+@keyframes scrollPulse {
+  0%, 100% { opacity: 0.4; transform: translateX(-50%) translateY(0); }
+  50% { opacity: 0.15; transform: translateX(-50%) translateY(8px); }
+}
+
+.fade-in-up {
+  animation: fadeInUp 0.6s ease forwards;
+}
+
+.fade-in-up-delay-1 {
+  animation: fadeInUp 0.6s ease 0.15s forwards;
+  opacity: 0;
+}
+
+.fade-in-up-delay-2 {
+  animation: fadeInUp 0.6s ease 0.3s forwards;
+  opacity: 0;
+}
+
+.fade-in-up-delay-3 {
+  animation: fadeInUp 0.6s ease 0.45s forwards;
+  opacity: 0;
+}
+
+/* ------------------------------------------
+   12. 响应式 — 平板 (≥768px)
+   ------------------------------------------ */
+@media (min-width: 768px) {
+  .hero h1 {
+    font-size: 48px;
+  }
+
+  .hero-sub {
+    font-size: 20px;
+  }
+
+  .hero-egg {
+    font-size: 96px;
+  }
+
+  .pain-title {
+    font-size: 34px;
+  }
+
+  .pain-list li {
+    font-size: 18px;
+    text-align: center;
+  }
+
+  .value-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+  }
+
+  .section-cta h2 {
+    font-size: 36px;
+  }
+}
+
+/* ------------------------------------------
+   13. 响应式 — 桌面 (≥1024px)
+   ------------------------------------------ */
+@media (min-width: 1024px) {
+  .hero h1 {
+    font-size: 56px;
+  }
+
+  .hero-sub {
+    font-size: 22px;
+    max-width: 480px;
+  }
+
+  .value-grid {
+    gap: 40px;
+  }
+
+  .value-card {
+    padding: 48px 36px;
+  }
+}
+
+/* ------------------------------------------
+   14. 移动端 (<768px)
+   ------------------------------------------ */
+@media (max-width: 767px) {
+  .legal-content {
+    padding: 0 16px 60px;
+  }
+
+  .legal-content h1 {
+    font-size: 24px;
+  }
+
+  .legal-header {
+    margin-bottom: 24px;
+  }
+
+  .section-pain {
+    padding: 80px 0;
+  }
+
+  .section-value {
+    padding: 80px 0;
+  }
+
+  .section-cta {
+    padding: 80px 0;
+  }
+}
